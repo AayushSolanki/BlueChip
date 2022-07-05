@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Blue Chip</string>
+    <string name="createVoucherButton">Create Voucher</string>
 </resources>
