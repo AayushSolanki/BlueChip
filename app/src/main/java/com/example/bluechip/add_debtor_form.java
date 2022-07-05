@@ -68,6 +68,7 @@ addDebotrprogressDialog.setMessage("Adding debtor");
                 urls.add_debtor_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+
                 Toast.makeText(getApplicationContext(), "Debtor Added Succesfully", Toast.LENGTH_LONG).show();
                 addDebotrprogressDialog.dismiss();
             }
@@ -75,8 +76,12 @@ addDebotrprogressDialog.setMessage("Adding debtor");
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                        addDebotrprogressDialog.hide();
+
+                        if(error!=null && error.getMessage()!=null){
+                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                            addDebotrprogressDialog.hide();
+
+                        }
                     }
                 }
         ) {
