@@ -38,48 +38,7 @@ public class voucher_form extends AppCompatActivity {
         spinnerDebtor = findViewById(R.id.spinner);
         spinnerstock = findViewById(R.id.spinnerStock);
 
-        getDebtorList();
-        getStockList();
 
-
-    }
-
-
-    private void getStockList(){
-        stockrequestQueue = Volley.newRequestQueue(this);
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urls.stock_list_url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray jsonArray = response.getJSONArray("stocks");
-                    for(int i=0; i<jsonArray.length();i++){
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        String stockName = jsonObject.optString("Pname");
-                        stockList.add(stockName);
-                        ArrayAdapter<String> stockAdapter= new ArrayAdapter<>(voucher_form.this,
-                                android.R.layout.simple_spinner_item, stockList);
-                        stockAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-                        spinnerstock.setAdapter(stockAdapter);
-
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        stockrequestQueue.add(jsonObjectRequest);
-    }
-
-
-    private  void getDebtorList(){
         debtorrequestQueue = Volley.newRequestQueue(this);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urls.debtor_list_url, null, new Response.Listener<JSONObject>() {
@@ -110,7 +69,39 @@ public class voucher_form extends AppCompatActivity {
             }
         });
         debtorrequestQueue.add(jsonObjectRequest);
+        stockrequestQueue = Volley.newRequestQueue(this);
 
+        JsonObjectRequest jsonObjectRequest2 = new JsonObjectRequest(Request.Method.POST, urls.stock_list_url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray jsonArray = response.getJSONArray("stocks");
+                    for(int i=0; i<jsonArray.length();i++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        String stockName = jsonObject.optString("Pname");
+                        stockList.add(stockName);
+                        ArrayAdapter<String> stockAdapter= new ArrayAdapter<>(voucher_form.this,
+                                android.R.layout.simple_spinner_item, stockList);
+                        stockAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                        spinnerstock.setAdapter(stockAdapter);
+
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        stockrequestQueue.add(jsonObjectRequest2);
     }
+
+
+
 
 }
