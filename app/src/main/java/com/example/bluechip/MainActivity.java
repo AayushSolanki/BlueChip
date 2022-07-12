@@ -15,11 +15,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //projectr created
 
-        Button addDebtorbutton, addvoucherButton, addStockButton;
+        Button addDebtorbutton, addvoucherButton, addStockButton , debtor_leadger;
 
         addDebtorbutton = findViewById(R.id.addDebtorButton);
  addvoucherButton = findViewById(R.id.createVoucherButton);
  addStockButton = findViewById(R.id.addStockButton);
+ debtor_leadger = findViewById(R.id.debtors_ledger);
+
+ debtor_leadger.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
+         Intent intent = new Intent(v.getContext() , debtor_ledger.class);
+         startActivity(intent);
+     }
+ });
+
  addvoucherButton.setOnClickListener(new View.OnClickListener() {
      @Override
      public void onClick(View view) {

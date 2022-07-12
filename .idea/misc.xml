@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/layout/activity_add_debtor_form.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/layout/activity_add_stock_form.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/layout/activity_debtor_ledger.xml" value="0.15648148148148147" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/layout/activity_voucher_form.xml" value="0.25" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/layout/debotrs_ledger.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/layout/debotrs_ledger_recyclerview_layout.xml" value="0.25" />
         <entry key="..\:/Users/lenovo/AndroidStudioProjects/BlueChip/app/src/main/res/xml/network.xml" value="0.20416666666666666" />
       </map>
     </option>
