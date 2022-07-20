@@ -19,6 +19,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".sales_voucher"
+            android:exported="false" />
+        <activity
             android:name=".debtor_ledger"
             android:exported="false" />
         <activity

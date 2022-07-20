@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
  addvoucherButton.setOnClickListener(new View.OnClickListener() {
      @Override
      public void onClick(View view) {
-         Intent intent = new Intent(view.getContext() , voucher_form.class);
+         Intent intent = new Intent(view.getContext() , sales_voucher.class);
          startActivity(intent);
      }
  });
