@@ -11,31 +11,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="21dp"
         android:text="Select Debtor"
-        app:layout_constraintEnd_toStartOf="@+id/spinner3"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/debtorListSpinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner3"
+        android:id="@+id/debtorListSpinner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        android:layout_marginEnd="29dp"
+        android:dropDownSelector="@color/cardview_light_background"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView9" />
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/openalertdailog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="29dp"
         android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/debtorListSpinner"
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <TextView
@@ -43,9 +46,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="152dp"
-        android:text="additem"
+        android:layout_marginTop="71dp"
+        android:layout_marginBottom="73dp"
+        android:text="Add Item"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView_selectedItems"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+
+    <Button
+        android:id="@+id/vouchersubmitbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="9dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView_selectedItems" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_selectedItems"
+        android:layout_width="0dp"
+        android:layout_height="302dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

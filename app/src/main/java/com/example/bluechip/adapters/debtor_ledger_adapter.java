@@ -1,6 +1,7 @@
 package com.example.bluechip.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bluechip.R;
+import com.example.bluechip.debtor_ledger;
+import com.example.bluechip.debtor_ledger_view;
 import com.example.bluechip.models.debtor_ledger_model;
 
 import java.util.List;
@@ -21,6 +24,7 @@ public class debtor_ledger_adapter extends  RecyclerView.Adapter<debtor_ledger_a
     public debtor_ledger_adapter(Context context, List<debtor_ledger_model> debtor_ledger_models) {
         this.context = context;
         this.debtor_ledger_models = debtor_ledger_models;
+
     }
 
     @NonNull
@@ -32,7 +36,20 @@ public class debtor_ledger_adapter extends  RecyclerView.Adapter<debtor_ledger_a
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-holder.debtor_name.setText(debtor_ledger_models.get(position).getDebtorName());
+
+        final debtor_ledger_model model = debtor_ledger_models.get(position);
+        holder.debtor_name.setText(debtor_ledger_models.get(position).getDebtorName());
+
+holder.debtor_name.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(context, debtor_ledger_view.class);
+        intent.putExtra("debtor_id",model.getDebtorName());
+
+context.startActivity(intent);
+
+    }
+});
 
     }
 

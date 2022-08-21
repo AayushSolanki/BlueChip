@@ -59,20 +59,16 @@ debtorLedgerrecyclerView.setAdapter(Debtor_ledger_adapter);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, urls.debtor_list_url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-list.add(new debtor_ledger_model("abc"));
                 try {
                     JSONArray jsonArray = response.getJSONArray("debtors");
                     for(int i=0; i<jsonArray.length();i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                  String name = jsonObject.getString("Name");
+                  String name = jsonObject.getString("Debtor_Name");
                  list.add(new debtor_ledger_model(name));
-
-
                     }
                     setAdapter(list);
 
                 } catch (JSONException e) {
-                    list.add(new debtor_ledger_model("abc"));
 
                     e.printStackTrace();
                 }
@@ -82,7 +78,6 @@ list.add(new debtor_ledger_model("abc"));
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(debtor_ledger.this,error.getMessage(),Toast.LENGTH_SHORT).show();
-
                     }
                 });
 

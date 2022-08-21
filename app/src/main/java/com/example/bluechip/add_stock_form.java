@@ -23,16 +23,17 @@ import java.util.Map;
 public class add_stock_form extends AppCompatActivity {
 EditText productName;
 Button addProductButton;
-
 ProgressDialog addProductprogressDialog;
-    @Override
+
+@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_stock_form);
 
         productName = findViewById(R.id.editTextProductName);
         addProductButton = findViewById(R.id.addProductButton);
-addProductprogressDialog = new ProgressDialog(this);
+        addProductprogressDialog = new ProgressDialog(this);
+
 
         addProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,17 +42,14 @@ addProductprogressDialog = new ProgressDialog(this);
             }
         });
     }
-
     private void addProduct(){
         String ProductName = productName.getText().toString().trim();
         if (ProductName.equals("")) {
             productName.setError("Name is required");
         }
         else{
-
             addProductprogressDialog.setMessage("Adding Product");
             addProductprogressDialog.show();
-
             StringRequest stringRequest = new StringRequest(Request.Method.POST,
                     urls.add_stock_url, new Response.Listener<String>() {
                 @Override
@@ -72,7 +70,6 @@ addProductprogressDialog = new ProgressDialog(this);
 
                     Map<String, String> params = new HashMap<>();
                     params.put("Product_Name", ProductName);
-
                     return params;
                 }
             };

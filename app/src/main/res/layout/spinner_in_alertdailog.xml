@@ -8,59 +8,39 @@
 
     <Spinner
         android:id="@+id/spinnerselectitem"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="35dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="23dp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumber3"
+        android:layout_marginEnd="13dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Alertdialogquantity"
+        app:layout_constraintEnd_toStartOf="@+id/Alertdialogquantity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/Alertdialogquantity" />
 
     <EditText
-        android:id="@+id/editTextNumber3"
+        android:id="@+id/Alertdialogquantity"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="36dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="99dp"
+        android:layout_marginEnd="11dp"
         android:ems="10"
         android:hint="Quantity"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/spinnerselectitem"
-        app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal3"
+        app:layout_constraintEnd_toStartOf="@+id/alertdialogRate"
         app:layout_constraintStart_toEndOf="@+id/spinnerselectitem"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerselectitem" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextNumberDecimal3"
+        android:id="@+id/alertdialogRate"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="6dp"
         android:ems="10"
         android:hint="Rate"
         android:inputType="numberDecimal"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editTextNumber3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Alertdialogquantity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextNumber3" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="64dp"
-        android:text="Add"
-        app:layout_constraintStart_toStartOf="@+id/editTextNumber3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber3" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="19dp"
-        android:text="Select item"
-        app:layout_constraintEnd_toEndOf="@+id/editTextNumber3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/Alertdialogquantity" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

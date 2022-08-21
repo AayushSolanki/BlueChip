@@ -17,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class add_debtor_form extends AppCompatActivity {
@@ -44,8 +45,6 @@ public class add_debtor_form extends AppCompatActivity {
                 addDebtor();
             }
         });
-
-
     }
 
     private void addDebtor() {
@@ -56,8 +55,7 @@ public class add_debtor_form extends AppCompatActivity {
             debtor_name.setError("Debtor name is required");
         }
         else if(OpeningBalance.equals("")){
-           opening_balance.setError("Opening Balance cannot be null");
-
+            opening_balance.setError("Opening Balance cannot be null");
         }
         else {
 addDebotrprogressDialog.setMessage("Adding debtor");
@@ -68,8 +66,16 @@ addDebotrprogressDialog.setMessage("Adding debtor");
                 urls.add_debtor_url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                int n = Integer.parseInt(response.trim());
+                if(n==0){
+                    Toast.makeText(getApplicationContext(), "Debtor already Registered", Toast.LENGTH_LONG).show();
+                    debtor_name.setError("Debtor is already registered");
+                    addDebotrprogressDialog.hide();
 
-                Toast.makeText(getApplicationContext(), "Debtor Added Succesfully", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Debtor Added Successfully", Toast.LENGTH_LONG).show();
+                }
                 addDebotrprogressDialog.dismiss();
             }
         },
@@ -88,7 +94,7 @@ addDebotrprogressDialog.setMessage("Adding debtor");
             protected Map<String, String> getParams() throws AuthFailureError {
 
                 Map<String, String> params = new HashMap<>();
-                params.put("Name", Name);
+                params.put("Debtor_Name", Name);
                 params.put("Opening_Balance", OpeningBalance);
 
                 return params;

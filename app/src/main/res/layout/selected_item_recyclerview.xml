@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/selectedItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginStart="10dp"
+        android:text="Item Name"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/selectedItemQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/selectedItemQuantity"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/selectedItemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="44dp"
+
+        android:layout_marginEnd="2dp"
+        android:text="Quantity"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/selectedItemRate"
+        app:layout_constraintStart_toEndOf="@+id/selectedItemName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/selectedItemRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginEnd="5dp"
+
+        android:text="Rate"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/selectedItemQuantity"
+        app:layout_constraintEnd_toStartOf="@+id/selectedItemTotal"
+        app:layout_constraintStart_toEndOf="@+id/selectedItemQuantity" />
+
+    <TextView
+        android:id="@+id/selectedItemTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginEnd="17dp"
+
+        android:text="Total"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/selectedItemRate"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintStart_toEndOf="@+id/selectedItemRate" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="9dp"
+        android:layout_margin="5dp"
+        android:backgroundTint="#881212"
+        android:contentDescription="@android:string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/selectedItemTotal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cross" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
