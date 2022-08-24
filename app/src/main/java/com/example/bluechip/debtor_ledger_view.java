@@ -72,8 +72,6 @@ loadvouchers();
     public void loadvouchers(){
 
         voucherLoadrequestQueue = Volley.newRequestQueue(this);
-
-
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, "http://192.168.167.184/apis/get_voucher_list.php?party_ledger="+"'"+debtor_name+"'", null, new Response.Listener<JSONObject>() {
 
             @Override
